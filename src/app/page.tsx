@@ -1,6 +1,7 @@
+import { Switch as SwitchSnippet } from "@/components/ui/switch";
+import { Button, Popover, PopoverBody } from "@chakra-ui/react";
 import Image from "next/image";
 import styles from "./page.module.css";
-
 export default function Home() {
   return (
     <div className={styles.page}>
@@ -19,6 +20,41 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+
+        {/* <SwitchChakra.Root>
+          <SwitchChakra.HiddenInput />
+          <SwitchChakra.Control />
+          <SwitchChakra.Thumb >
+            <SwitchChakra.ThumbIndicator fallback="off">
+              on
+            </SwitchChakra.ThumbIndicator>
+            <SwitchChakra.Indicator fallback="off">on</SwitchChakra.Indicator>
+          </SwitchChakra.Thumb>
+          <SwitchChakra.Label>Switch Chakra</SwitchChakra.Label>
+        </SwitchChakra.Root> */}
+
+        <SwitchSnippet>Default Switch Snippet</SwitchSnippet>
+        <SwitchSnippet variant="solid">Solid Switch Snippet</SwitchSnippet>
+        <SwitchSnippet variant="raised">Raised Switch Snippet</SwitchSnippet>
+
+        <Popover.Root positioning={{ placement: "bottom-end" }}>
+          <Popover.Trigger asChild>
+            <Button size="sm" variant="outline">
+              Click me
+            </Button>
+          </Popover.Trigger>
+          <Popover.Content>
+            <Popover.Arrow />
+            <PopoverBody>Some content</PopoverBody>
+          </Popover.Content>
+        </Popover.Root>
+
+        {/* <CheckboxChakra.Root>
+          <CheckboxChakra.Control />
+          <CheckboxChakra.Label>Checkbox Chakra</CheckboxChakra.Label>
+        </CheckboxChakra.Root>
+
+        <CheckboxSnippet>Checkbox Snippet</CheckboxSnippet> */}
 
         <div className={styles.ctas}>
           <a
